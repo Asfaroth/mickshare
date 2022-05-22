@@ -1,0 +1,29 @@
+// color palette: https://coolors.co/12263a-8390fa-3c5a14-b6c9bb-dce0d9
+
+$prussianBlue: #12263A;
+$cornflowerBlue: #8390FA;
+$darkMossGreen: #3C5A14;
+$ashGray: #B6C9BB;
+$platinum: #DCE0D9;
+
+header {
+  background-color: $platinum;
+}
+
+footer {
+  color: white;
+  background-color: $prussianBlue;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: $darkMossGreen;
+    }
+  }
+
+  .made-with-heart {
+    color: orangered;
+  }
+}

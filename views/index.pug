@@ -1,0 +1,15 @@
+extends regularPage
+
+block main
+  main(class='container')
+    form
+      legend You have been invited to Upload a file to
+        if name === undefined
+          |  this
+        else
+          |  #{name}'s
+        |  server.
+      div(class='mb-3')
+        input(class='form-control form-control-lg', id='file-input', type='file')
+      div(class='mb-3')
+        button(type='submit' class='btn btn-primary') Submit
