@@ -105,3 +105,6 @@ dist
 
 # WebStorm IDE stuff
 .idea/
+
+# Deafult upload Directory
+uploads/

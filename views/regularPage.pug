@@ -1,17 +1,20 @@
 extends layout
 
 block content
-  header
-    nav(class='navbar')
+  div(class='content')
+    header
+      nav(class='navbar')
+        div(class='container')
+          span(class='navbar-brand mb-0 h1') MickShare
+    block main
+    footer
       div(class='container')
-        span(class='navbar-brand mb-0 h1') MickShare
-  block main
-  footer
-    div(class='container')
-      span Made With&nbsp;
-      i(class='bi bi-heart-fill made-with-heart')
-      span &nbsp;by Asfaroth
-      br
-      a(href='https://github.com/Asfaroth/mickshare', target='_blank')
-        span Check out the code on Github&nbsp;
-        i(class='bi bi-github')
+        div(class='row')
+          div(class='col-4 offset-1')
+            span Made With&nbsp;
+            i(class='bi bi-heart-fill made-with-heart')
+            span &nbsp;by Asfaroth
+          div(class='col-4 offset-2')
+            a(href='https://github.com/Asfaroth/mickshare', target='_blank')
+              span Check out the code on GitHub&nbsp;
+              i(class='bi bi-github')

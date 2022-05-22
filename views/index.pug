@@ -2,7 +2,7 @@ extends regularPage
 
 block main
   main(class='container')
-    form
+    form(action='upload', method='post', enctype='multipart/form-data')
       legend You have been invited to Upload a file to
         if name === undefined
           |  this
@@ -10,6 +10,12 @@ block main
           |  #{name}'s
         |  server.
       div(class='mb-3')
-        input(class='form-control form-control-lg', id='file-input', type='file')
-      div(class='mb-3')
-        button(type='submit' class='btn btn-primary') Submit
+        input(class='form-control form-control-lg', id='file-input', name='file-input', type='file', required)
+      div(class='mb-3 row g-3 button-row')
+        div(class='col-2')
+          button(type='submit' class='btn btn-primary col-content submit-button') Submit
+        if alert !== undefined
+          div(class='col-10')
+            div(class='col-content alert ' + alert.level)
+              i(class='bi bi-check-circle-fill')
+              | &nbsp;#{alert.text}

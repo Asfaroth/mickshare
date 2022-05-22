@@ -6,24 +6,64 @@ $darkMossGreen: #3C5A14;
 $ashGray: #B6C9BB;
 $platinum: #DCE0D9;
 
-header {
-  background-color: $platinum;
-}
+.content {
+  display: flex;
+  flex-direction: column;
 
-footer {
-  color: white;
-  background-color: $prussianBlue;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
 
-  a {
+  header {
+    background-color: $platinum;
+  }
+
+  footer {
     color: white;
-    text-decoration: none;
+    background-color: $prussianBlue;
 
-    &:hover {
-      color: $darkMossGreen;
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $darkMossGreen;
+      }
+    }
+
+    .made-with-heart {
+      color: orangered;
+    }
+
+    .row {
+      line-height: 5;
     }
   }
 
-  .made-with-heart {
-    color: orangered;
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .btn-primary {
+      background-color: $cornflowerBlue;
+      border-color: $cornflowerBlue;
+    }
+
+    .alert {
+      margin-bottom: 0;
+    }
+
+    .button-row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .submit-button {
+      padding: 1rem 1rem;
+      width: 100%;
+    }
   }
 }
