@@ -3,9 +3,7 @@ const fs = require('fs');
 const router = express.Router({strict: true});
 const multer = require('multer');
 
-const uploadLocation = process.env.upload ?
-  process.env.upload:
-  'uploads/';
+const uploadLocation = process.env.UPLOAD ?? 'uploads/';
 
 if (!fs.existsSync(uploadLocation)) {
   fs.mkdirSync(uploadLocation);
@@ -23,16 +21,16 @@ const upload = multer({storage: multer.diskStorage({
   })});
 
 // making sure that the URI ends with a slash to make sure that the form action leads to the correct URI
-const baseURI = process.env.uri ?
-  process.env.uri.endsWith('/') ?
-    process.env.uri:
-    process.env.uri + '/':
+const baseURI = process.env.URI ?
+  process.env.URI.endsWith('/') ?
+    process.env.URI:
+    process.env.URI + '/':
   '/';
 console.log(`Starting server at "${baseURI}" and saving files to "${uploadLocation}".`);
 
 router.get(baseURI, (req, res) => {
   let options = {};
-  if (process.env.name) options['name'] = process.env.name;
+  if (process.env.NAME) options['name'] = process.env.NAME;
   res.render('index', options);
 });
 
