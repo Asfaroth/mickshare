@@ -28,6 +28,10 @@ const baseURI = process.env.URI ?
   '/';
 console.log(`Starting server at "${baseURI}" and saving files to "${uploadLocation}".`);
 
+router.get(baseURI.slice(0, -1), (req, res) => {
+  res.redirect(301, baseURI);
+});
+
 router.get(baseURI, (req, res) => {
   let options = {};
   if (process.env.NAME) options['name'] = process.env.NAME;
