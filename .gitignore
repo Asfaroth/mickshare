@@ -106,5 +106,8 @@ dist
 # WebStorm IDE stuff
 .idea/
 
-# Deafult upload Directory
+# Default upload Directory
 uploads/
+
+# Keep compiled CSS out as it is handled by the middleware either way
+*.css

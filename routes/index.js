@@ -39,7 +39,13 @@ router.get(baseURI, (req, res) => {
 });
 
 router.post(baseURI + 'upload', upload.single('file-input'), (req, res) => {
-  res.render('index', {name: 'Patrick', alert: {level: 'alert-success', text: 'File uploaded successfully.'}});
+  let options = {};
+  if (process.env.NAME) options['name'] = process.env.NAME;
+  options['alert'] = {
+    level: 'alert-success',
+    text: 'File uploaded successfully.'
+  }
+  res.render('index', options);
 });
 
 module.exports = router;
